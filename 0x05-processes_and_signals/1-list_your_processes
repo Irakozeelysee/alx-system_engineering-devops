@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Get the process list
+process_list=$(ps ax -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,command)
+
+# Set the field separator to newline
+IFS=$'\n'
+
+# Display the process list with user-oriented format
+for process in $process_list; do
+  echo $process
+done

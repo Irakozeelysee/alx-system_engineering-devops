@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# shellcheck disable=SC2009
+
+# Get the process list containing "bash" word
+process_list=$(ps ax | grep bash | grep -v grep)
+
+# Display the process list
+echo "$process_list"
