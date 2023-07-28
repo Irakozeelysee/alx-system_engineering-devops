@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
 # Check if the 4-to_infinity_and_beyond process is running
-if pgrep -x "4-to_infinity_and_beyond" > /dev/null; then
-	echo "Stopping 4-to_infinity_and_beyond process..."
-	pkill -x "4-to_infinity_and_beyond"
-	echo "Terminated 4-to_infinity_and_beyond."
-else
-	echo "4-to_infinity_and_beyond process is not running."
-fi
+pidToKill=$(ps auxf | awk '/\.\/4-to_infinity_and_beyond/ {print $2}')
+
+kill "$pidToKill"
