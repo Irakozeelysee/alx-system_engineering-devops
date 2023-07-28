@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
+# Check if the 4-to_infinity_and_beyond process is running and stop it
 
-# Check if the 4-to_infinity_and_beyond process is running
 pidToKill=$(ps auxf | awk '/\.\/4-to_infinity_and_beyond/ {print $2}')
 
 kill "$pidToKill"
