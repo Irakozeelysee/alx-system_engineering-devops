@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Display a list of currently running processes
 
-# Get the process list and display
-ps auxf
+# Use 'ps' command to get the process tree and format the output
+ps -e -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,comm,args --forest

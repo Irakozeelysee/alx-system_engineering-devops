@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# Find all processes with "bash" in their name and extract PID and process name
-while read -r pid comm; do
-	echo "$pid $comm"
-done < <(ps -e -o pid,comm | grep "[b]ash")
