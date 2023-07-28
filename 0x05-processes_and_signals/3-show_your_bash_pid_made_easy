@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
 
-# Get the list of all running processes with their PIDs
-process_list=("/proc"/*/)
-
-# Loop through each process
-for process_path in "${process_list[@]}"; do
-    # Get the process name from the cmdline file
-    process_name=$(cat "$process_path/cmdline" 2>/dev/null | tr -d '\0')
-    
-    # Check if the process name contains the word "bash"
-    if [[ $process_name == *"bash"* ]]; then
-        # Extract and display the PID and process name
-        process_pid=$(basename "$process_path")
-        echo "$process_pid $process_name"
-    fi
-done
+# Find all processes with "bash" in their name and extract PID and process name
+while read -r pid comm; do
+	echo "$pid $comm"
+done < <(ps -e -o pid,comm | grep "[b]ash")
