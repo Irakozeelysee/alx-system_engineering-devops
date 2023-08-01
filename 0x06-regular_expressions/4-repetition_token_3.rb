@@ -3,4 +3,4 @@
 #or more occurrences of "t" and ending with "n"
 
 
-puts ARGV[0].scan(/hb(t*n)/).join
+puts ARGV[0].scan(/hb[t]{0,}n/).join
