@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Script to display listening TCP, UDP, and UNIX domain sockets with PID and program name
+
+netstat -tulp -A unix
