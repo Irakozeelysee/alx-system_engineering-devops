@@ -1,0 +1,10 @@
+# SSH client configuration
+
+# Default settings for all hosts
+
+Host *
+     HostName 54.90.21.58
+     User ubuntu
+     Port 22
+     IdentityFile ~/.ssh/school/
+     PasswordAuthentication no

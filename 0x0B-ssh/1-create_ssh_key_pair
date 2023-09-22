@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script creates an RSA key pair with a passphrase
+
+# Set the key filename
+ssh-keygen -t rsa -f school -b 4096 -N betty
