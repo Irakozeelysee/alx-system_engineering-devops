@@ -4,5 +4,5 @@ exec { 'killmenow':
   command     => 'pkill killmenow',
   path        => '/bin:/usr/bin',
   refreshonly => true,
-  subscribe   => File['/path/to/killmenow_script'], # Replace with the actual path to your "killmenow" script
+  subscribe   => File['/path/to/killmenow_script'],
 }
